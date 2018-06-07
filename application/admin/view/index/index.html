@@ -204,10 +204,8 @@
         <!-- Top Bar End -->
 
         <!-- Start Page content -->
-        <div class="content">
-            <div class="container-fluid">
-                {block name="content" }{/block}
-            </div> <!-- container -->
+        <div class="content" style="margin-right:-25px;">
+            <iframe src="{:url('admin/index/dashboard')}" frameborder="0" width="100%"></iframe>
         </div> <!-- content -->
         <footer class="footer text-right">
             2018 © Highdmin. - Coderthemes.com
@@ -223,3 +221,9 @@
 {include file="admin@public/script" }
 </body>
 </html>
+<script>
+    $('iframe').css('height',$(window).height() - 95 - 61 - 40 + 'px');
+    $(window).resize(function(){
+        $('iframe').css('height',$(window).height() - 95 - 61 - 40 + 'px');
+    })
+</script>

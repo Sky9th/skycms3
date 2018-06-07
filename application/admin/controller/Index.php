@@ -8,11 +8,18 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\Module;
 use think\Controller;
 
 class Index extends Controller{
 
     public function index(){
+        $module = new Module();
+        $param['sidebar'] = $module->tree();
+        return view('', $param);
+    }
+
+    public function dashboard(){
         return view();
     }
 
